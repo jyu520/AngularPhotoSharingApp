@@ -1,0 +1,11 @@
+<div class="user-list">
+    <ul>
+        <li  ng-repeat="user in users">
+            <a ng-href="#!/users/{{user._id}}">
+                <div class="user-button" ng-href="#!/users/{{user._id}}">
+                    <h3>{{user.first_name}} {{user.last_name}}</h3>
+                </div>
+            </a>
+        </li>
+    </ul>
+</div>

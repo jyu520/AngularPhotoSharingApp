@@ -1,0 +1,39 @@
+<div id="no-photos" ng-show="noPhotos"><h2>No Photos Available</h2></div> 
+<div class="photo-view">
+    <ul>
+        <li ng-repeat="photo in userPhotos">
+            
+            <div class="photo-panel">
+                <div class="photo-container">
+                    <div ng-show="isUser">
+                        <button class="btn" ng-click="deleteFavorite(photo)" ng-show="isFavorite(photo)">&#9733;</button>
+                        <button class="btn" ng-click="addFavorite(photo)" ng-hide="isFavorite(photo)">&#9734;</button>
+                    </div>
+                    <img id="{{photo._id}}" ng-src="/images/{{photo.file_name}}">
+                </div>
+
+                <div class="comment-box">
+                    <p>Date Taken: {{photo.date_time}}</p>
+                    <p>Comments:</p>
+                    
+                    <div class="comment">
+                        <ul>
+                            <li ng-repeat="comment in photo.comments">
+                                <a ng-href="#!/users/{{comment.user._id}}">{{comment.user.first_name}} {{comment.user.last_name}}</a>: {{comment.comment}} <button ng-show="checkCommentPermissions(comment.user)" ng-click="deleteComment(photo, comment)">x</button>
+                                <p>Posted on: {{comment.date_time}}</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div class="comment-bar">
+                <form ng-submit="addComment(photo)">
+                    <input type="text" placeholder="Enter comment" ng-model="userInput.newComment">
+                    <input type="submit" id="addCommentButton" value="Add Comment">
+                </form>
+                <a ng-show="isUser" ng-click="deletePhoto(photo)"><button>Delete Photo</button></a>
+            </div>
+        </li>
+    </ul>
+</div>

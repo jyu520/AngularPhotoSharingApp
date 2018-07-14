@@ -1,0 +1,26 @@
+
+<h1 id="title">Welcome to Photo Share</h1>
+
+<form class="loginScreen">
+    <div><input type="text" id="username" placeholder="Enter username" ng-model="name" ng-minlength="1"></div>
+    <div><input type="password" id="password" placeholder="Enter password" ng-model="password" ng-minlength="1"></div>
+    <div><div id="errDiv" ng-model="error.msg"></div></div>
+    <div><button id="loginButton" type="submit" ng-click="submitLogin()">Login</button></div>
+</form>
+
+<form class="registration-form">
+    <div class="regFields">
+        Register a new user: 
+        <div> <input type="text" id="user_name" ng-model="user_name" placeholder="User name*" ng-minlength="1"/> </div>
+        <div> <input type="password" id="pass" ng-model="newPassword" placeholder="Password*" ng-minlength="1"/> </div>
+        <div> <input type="password" id="passVeri" ng-model="verifyNewPassword" placeholder="Verify Password*" ng-minlength="1"/> </div>
+        <div> <input type="text" id="first" ng-model="first_name" placeholder="First Name*" ng-minlength="1"/> </div>
+        <div> <input type="text" id="last" ng-model="last_name" placeholder="Last Name*" ng-minlength="1"/> </div>
+        <div> <input type="text" ng-model="location" placeholder="Location" ng-minlength="1"/> </div>
+        <div> <input type="text" ng-model="description" placeholder="Description" ng-minlength="1"/> </div>
+        <div> <input type="text" ng-model="occupation" placeholder="Occupation" ng-minlength="1"/> </div>
+        <div id="required"> * Required </div>
+
+        <div> <input type="submit" id="register" value="Register Me" ng-click="registerMe()" /> </div>
+    </div>
+  </form>

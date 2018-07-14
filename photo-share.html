@@ -1,0 +1,72 @@
+<!doctype html>
+<html ng-app="cs142App" ng-controller="MainController">
+    <head>
+
+        <title>{{main.title || "CS142 Class Project"}}</title>
+
+        <link href="./node_modules/angular-material/angular-material.css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+        <script src="./node_modules/angular/angular.js" type="text/javascript" ></script>
+        <script src="./node_modules/angular-animate/angular-animate.js" type="text/javascript" ></script>
+        <script src="./node_modules/angular-aria/angular-aria.js" type="text/javascript" ></script>
+        <script src="./node_modules/angular-material/angular-material.js" type="text/javascript" ></script>
+        <script src="./node_modules/angular-resource/angular-resource.js" type="text/javascript" ></script>
+
+        <script src="node_modules/angular-route/angular-route.js"></script>
+
+        <script src="mainController.js"></script>
+        <link rel="stylesheet" type="text/css" href="main.css" />
+
+        <script src="components/user-list/user-listController.js"></script>
+        <link rel="stylesheet" type="text/css" href="components/user-list/user-list.css" />
+
+        <script src="components/user-detail/user-detailController.js"></script>
+        <link rel="stylesheet" type="text/css" href="components/user-detail/user-detail.css" />
+
+        <script src="components/user-photos/user-photosController.js"></script>
+        <link rel="stylesheet" type="text/css" href="components/user-photos/user-photos.css" />
+
+        <script src="components/login-register/login-registerController.js"></script>
+        <link rel="stylesheet" type="text/css" href="components/login-register/login-register.css" />
+
+        <script src="components/favorite-view/favorite-viewController.js"></script>
+        <link rel="stylesheet" type="text/css" href="components/favorite-view/favorite-view.css" />
+
+    </head>
+
+    <body layout="column">
+
+        <md-toolbar layout = "row">
+            <div class="tool_left">
+                <a ng-href="#!/user/" ng-click="main.homeClick()"><button>Home</button></a>
+                {{main.tool_left}}
+                <div class="versionNum">
+                    V: {{main.version}}
+                </div>
+                <input ng-show="loginProfile.loggedIn" type="file" accept="image/*" id="photo-upload" onchange="angular.element(this).scope().inputFileNameChanged(this)">
+            </div>
+            <div class="tool_title" ng-show="loginProfile.loggedIn" >
+                {{main.title}}
+            </div>
+            <div class="toolbar-buttons">
+            <a ng-href="#!/favorite" ng-show="loginProfile.loggedIn"  ng-click="goToFavorites()" id="favorite_button"><button>Favorites</button></a>
+            <a ng-href="#!/delete" ng-show="loginProfile.loggedIn"  ng-click="deleteUser()" id="delete_button"><button>Delete Me</button></a>
+            <a ng-href="#!/admin/logout" ng-show="loginProfile.loggedIn" ng-click="main.logoutClick()" id="logoutButton"><button>Logout</button></a>
+            </div>
+        </md-toolbar>
+
+        <div class="container" flex layout="row">
+
+            <md-sidenav md-is-locked-open="true" class="md-whiteframe-z2">
+                <div ng-include="'components/user-list/user-listTemplate.html'" ng-controller="UserListController"></div>
+            </md-sidenav>
+
+            <md-content flex id="content">
+                <div ng-view></div>
+            </md-content>
+
+        </div>
+
+    </body>
+</html>

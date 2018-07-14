@@ -1,0 +1,29 @@
+.user-info{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: auto;
+    min-width: 300px;
+    min-height: 300px;
+    height: 25%;
+    margin: auto;
+    text-align: center;
+    
+    font-family: arial;
+    padding: 10px;
+}
+
+.title {
+    color: grey;
+}
+.description{
+    font-style: italic;
+}
+.photo-button{
+    background-color: #008CBA;
+    padding: 10px;
+    color: ivory;
+}
+
+.material-icons {
+    color: red;
+    font-size: 24px;
+}

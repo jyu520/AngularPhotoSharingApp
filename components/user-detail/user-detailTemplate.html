@@ -1,0 +1,18 @@
+<div class="user-info">
+    <h1>{{user.first_name}} {{user.last_name}}</h1>
+    <h2 class="title">{{user.occupation}}</h2>
+    <h2><i class="material-icons">place</i>{{user.location}}</h2>
+    <h3 class="description">"{{user.description}}"</h3>
+    <h3><a ng-href="#!/photos/{{user._id}}">
+        <button class="photo-button">Photo Album</button>
+    </a></h3>
+</div>
+
+    <div class="user-info">
+        <h2 class="title">Most Recent Photo: {{recentPhoto.date_time}}</h2>
+        <a ng-href="#!/photos/{{user._id}}?photoID={{recentPhoto._id}}"><img ng-src="/images/{{recentPhoto.file_name}}"></a>
+    </div>
+    <div class="user-info">
+        <h2 class="title">Most Popular Photo: {{commentedPhoto.comments.length}} commented</h2>
+        <a ng-href="#!/photos/{{user._id}}?photoID={{commentedPhoto._id}}"><img ng-src="/images/{{commentedPhoto.file_name}}"></a>
+    </div>

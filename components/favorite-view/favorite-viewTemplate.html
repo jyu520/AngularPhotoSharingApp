@@ -1,0 +1,11 @@
+<div class="favorite-view">
+    <ul>
+        <li ng-repeat="photo in favoritePictures">
+            <div class="photo-container">
+                <button class="btn" ng-click="deleteFavorite(photo)">x</button>
+                <img ng-click="openModal($event, photo)" ng-src="/images/{{photo.file_name}}">
+            </div>
+            
+        </li>
+    </ul>
+</div>

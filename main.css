@@ -1,0 +1,63 @@
+/*
+CSS for the CS142 project #5 main page
+
+Since CSS uses a global name space for classes we should use class names starting with
+cs142-main- here.
+*/
+a {
+    text-decoration: none;
+    color:blue;
+}
+.tool_left {
+    display:  flex;
+    text-align: center;
+    width: 100%;
+    margin: auto;
+}
+.tool_left button{
+    width: 90px;
+    height: 100%;
+    margin-left: 5px;
+    margin-right: 10px;
+    padding: 5px;
+}
+.tool_title{
+    width: 100%;
+    float: right;
+    margin-left: calc(50% - 580px);
+    margin-top: 10px;
+
+}
+
+.versionNum{
+    width: 70px;
+    margin-left:15px;
+    margin-top: 15px;
+}
+
+.toolbar-buttons{
+    display: flex;
+    
+}
+
+#logoutButton{
+    margin:auto;
+    margin-right: 7.5px;
+    margin-left: 7.5px;
+}
+
+#delete_button{
+    margin:auto;
+    margin-right: 7.5px;
+    margin-left: 7.5px;
+}
+
+#favorite_button{
+    margin:auto;
+    margin-right: 7.5px;
+}
+
+#photo-upload{
+    margin: auto;
+    margin-left: 75px;
+}

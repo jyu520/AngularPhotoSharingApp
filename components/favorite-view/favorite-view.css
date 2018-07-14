@@ -1,0 +1,52 @@
+
+
+.favorite-view ul {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.favorite-view img {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 350px;
+}
+
+.favorite-view img:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+
+/* Container needed to position the button. Adjust the width as needed */
+.photo-container {
+    position: relative;
+    margin: 10px;
+    /* width: 50%; */
+}
+
+/* Make the image responsive */
+.photo-container img {
+    /* width: 100%; */
+    height: auto;
+}
+
+/* Style the button and place it in the middle of the container/image */
+.photo-container .btn {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    background-color: #555;
+    color: white;
+    font-size: 18px;
+    padding: 6px 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.photo-container .btn:hover {
+    background-color: black;
+}
